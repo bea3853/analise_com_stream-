@@ -19,10 +19,9 @@ cursor.execute(''' CREATE TABLE IF NOT EXISTS vendas(
 
 
 # produto =  st.text_input('Digite o produto: ')
+
 produto =  st.text_input('Produto: ')
 valor  =  st.number_input('Valor', value = 0)
-# n_v =  valor.replace('.','')
-
 quantidade  =  st.number_input('Quantidade')
 
 st.markdown('***')
@@ -30,7 +29,7 @@ st.markdown('***')
 
 # cursor.execute('SELECT COUNT(*) FROM vendas')
 if st.button('Inserir'):
-    cursor.execute('INSERT INTO vendas VALUES(?,?,?)', (produto, n_v, quantidade))
+    cursor.execute('INSERT INTO vendas VALUES(?,?,?)', (produto,valor, quantidade))
     conn.commit()
 
 
